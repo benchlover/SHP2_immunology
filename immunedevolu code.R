@@ -1,0 +1,13 @@
+rm(list=ls())
+require(immunedeconv)
+a<-read.table("exp.txt", header=TRUE, row.names=1)
+res<-deconvolute(a, "timer", indications=rep("BRCA", ncol(a)))
+res2<-deconvolute(a, "quantiseq")
+res3<-deconvolute(a,"epic")
+write.csv(res,"a.csv")
+write.csv(res2,"b.csv")
+
+set_cibersort_binary("CIBERSORT.R")
+set_cibersort_mat("LM22.txt")
+res4<-deconvolute(a,"cibersort")
+write.csv(res4,"result_cibersort.csv")
