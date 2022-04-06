@@ -47,4 +47,3 @@ ssgsea_score12 = gsva(b, wiki, method = "ssgsea", ssgsea.norm = TRUE, verbose = 
 # Output the results as CSV files for downstream analysis. 
 write.csv(ssgsea_score11, "ssGSEAhigh_wiki.csv")
 write.csv(ssgsea_score12, "ssGSEAlow_wiki.csv")
-
