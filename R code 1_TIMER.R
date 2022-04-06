@@ -1,0 +1,5 @@
+rm(list=ls())
+require(immunedeconv)
+a<-read.table("exp.txt", header=TRUE, row.names=1)
+res<-deconvolute(a, "timer", indications=rep("BRCA", ncol(a)))
+write.csv(res,"result_TIMER.csv")
